@@ -1,0 +1,5 @@
+<vxml version="2.1" xml:lang="es-ES">
+<form id="datos" scope="document">
+<prompt>Bienvenido al asistente de la Alhambra digame en que lo puedo ayudar </prompt>
+</form>
+</vxml>
