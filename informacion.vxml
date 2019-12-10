@@ -1,0 +1,96 @@
+<vxml version="2.1" xml:lang="es-ES" application="asistente.vxml">
+<form id="informacion" scope="document">
+  <field name="opcion">
+  <prompt> Los palacios Nazarí consta de 3 palacios: el Mexuar, el palacio de Comares y el palacio de los leones. ¿De cual desea obtener información?</prompt>
+  </field>
+  <filled>
+    <if cond="opcion == 'Mexuar'">
+      <goto nextitem="mexuar">
+    <elseif cond="opcion == 'Comares' or opcion == 'palacio de Comares'">
+      <goto nextitem="comares">
+    <elseif cond="opcion == 'leones' or opcion == 'palacio de los leones'">
+      <got nexitem="leones">
+    </if>
+  </filled>
+</form>
+<link event="exit"> <gramar>adios|vale|ya|fin|terminar|finalizar|si</grammar> </link>
+<form id="mexuar">
+  <catch event="exit">
+    <goto nexitem="confirmar_salida"/>
+  </catch>
+  <block>
+    Es la sala más primitiva. Era la audiencia y justicia para casos importantes.
+    Tenía una cámara elevada cerrada por celosías donde se sentaba el sultán a escuchar sin ser visto.
+    No existían las ventanas laterales. Tenía el techo abierto en su parte central.
+    Al fondo, una pequeña habitación desde donde se divisa el Albaycín.
+    Parte superior con un friso escrito. Es un oratorio. A continuación se entra en un patio con fuente en el centro y una cámara a la izquierda.
+  </block>
+</form>
+<form id="leones">
+  <catch event="exit">
+    <goto nexitem="confirmar_salida"/>
+  </catch>
+  <link event="historia">
+    <grammar>
+      historia|cuentame algo de historia|informacion sobre la historia
+    </grammar>
+  </link>
+  <block>
+    En este palacio el arte nazarí alcanza su máximo esplendor, en el que se alcanza una belleza de una sensibilidad y armonía incomparables,
+    donde la luz, el agua, el colorido, la decoración exquisita, convierte a este palacio en una maravilloso placer para los sentidos,
+    en el que se deja atrás el periodo anterior de decoraciones más abstractas y geométricas para dar paso a un estilo más naturalista,
+    sin duda influjo de lo cristiano, acrecentado por la amistad que mantuvieron Mohamed V y Pedro I, el Cruel, por aquel entonces monarca cristiano.
+  </block>
+  <catch event="historia">
+    De acuerdo veamos algo de historia de <emp> El palacio de los leones </emp>.
+    Cuando Mohamed V sucedió a su padre Yusuf I (1377), no se limitó a terminar las reformas que éste había comenzado,
+    sino que comenzó a construir lo que sería su gran obra, el magnífico legado que nos dejó en la Alhambra: el Palacio de los Leones.
+    Este palacio constituía las estancias privadas de la familia real, y se construyó en el ángulo que forman los Baños y el Patio de los Arrayanes.
+
+    El palacio está compuesto por un patio central rodeado de galerías de columnas a modo de claustro cristiano, que permite el acceso a distintas salas:
+    al oeste la de los Mocárabes, al este la de los Reyes, al norte la de Dos Hermanas, Ajimeces y Mirador de Daraxa y al sur la de los Abencerrajes y el Harén.
+    No hay ventanas que miren al exterior, pero sí hay un jardín interior como corresponde a la idea musulmana del paraíso. Lo que hoy es tierra en el patio, fue jardín.
+    De cada sala fluyen 4 arroyos que van al centro: los 4 ríos del paraíso. Las columnas se unen con paños calados que dejan pasar la luz.
+    Fustes cilíndricos muy delgados, anillos en la parte superior, capiteles cúbicos sobre los que corren inscripciones.
+    Las planchas grises de plomo son amortiguadores para los terremotos. Los dos templetes que avanzan a los dos lados opuestos del patio son como un recuerdo de la tienda de campaña de los beduinos.
+    Son de planta cuadrada, decorados con cúpulas de madera que se apoyan en pechinas de mocárabes. El alero es obra del siglo XIX. Toda la galería está techada con artesonado de lacería.
+  </catch>
+  <field name="confirmar_salida" type="boolean">
+    <prompt> ¿Seguro que ya no quieres conocer más sobre <emp> El palacio de los leones </emp> ? </prompt>
+    <filled>
+      <if cond="confirmar_salida">
+        De acuerdo.
+        <exit/>
+      <else/>
+        De acuerdo, continuemos por donde nos quedamos.
+        <clear namelist="confirmar_salida"/>
+      </if>
+    </filled>
+  </field>
+</form>
+<form id="comares">
+  <link event="historia">
+    <grammar>
+      historia|cuentame algo de historia|informacion sobre la historia
+    </grammar>
+  </link>
+  <block>
+    En este palacio el arte nazarí alcanza su máximo esplendor, en el que se alcanza una belleza de una sensibilidad y armonía incomparables,
+    donde la luz, el agua, el colorido, la decoración exquisita, convierte a este palacio en una maravilloso placer para los sentidos,
+    en el que se deja atrás el periodo anterior de decoraciones más abstractas y geométricas para dar paso a un estilo más naturalista, sin duda influjo de lo cristiano,
+    acrecentado por la amistad que mantuvieron Mohamed V y Pedro I, el Cruel, por aquel entonces monarca cristiano.
+  </block>
+  <catch event="historia">
+    <block>
+      De acuerdo veamos algo de historia de <emp> El palacio Comares </emp>.
+      Es el palacio más importante, residencia oficial del Sultán y lugar donde se encontraba la sala del trono.
+      Fue edificado y ricamente decorado por Yusuf I, a quien debemos gran parte de las construcciones existentes en la Alhambra.
+      En el Patio Dorado encontramos la fachada de acceso a este palacio, de gran belleza y construida por Muhamed V, hijo de Yusuf I.
+      En ella se abren dos puertas, la de la derecha daba acceso a las dependencias familiares y la de la izquierda (por donde se continúa la visita) a la zona oficial del palacio.
+      La decoración es muy rica en toda la fachada, con zócalo de cerámica, y yeserías, destacando el bello alero de madera.
+      Continuando la visita, llegamos al Patio de los Arrayanes, también conocido como de la Alberca y de Comares. Es un patio clásico de tipo arábigo-andaluz,
+      con dos pórticos en sus lados menores, una gran alberca en la que se reflejan las construcciones, rodeada por macizos de arrayán, y dos pilas de mármol que vierten sus aguas en el estanque. Los pórticos tienes 7 arcos semicirculares, siendo mayor el central, de paños de yeso calados. Sobre el pórtico sur se elevan dos plantas, una con siete ventanas con celosías de madera, siendo la central doble, y otra superior ésta con una galería sobre el patio. Las dependencias del pórtico sur quedaron destruidas al construirse el palacio de Carlos V, que se adosa a éste.
+    </block>
+  </catch>
+</form>
+</vxml>

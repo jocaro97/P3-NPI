@@ -1,5 +1,11 @@
 <vxml version="2.1" xml:lang="es-ES">
-<form id="datos" scope="document">
-<prompt>Bienvenido al asistente de la Alhambra digame en que lo puedo ayudar </prompt>
+<form id="inicio" scope="document">
+  <menu>
+    <prompt>Bienvenido al asistente de los palacios Nazari digame en que lo puedo ayudar: </prompt>
+    <enumerate/>
+      <choice next="informacion.vxml"> Informacion </choice>
+      <choice next="entradas.vxml"> Entradas </choice>
+    <enumerate/>
+  </menu>
 </form>
 </vxml>
