@@ -1,4 +1,4 @@
-<vxml version="2.1" xml:lang="es-ES" application="asistente.vxml">
+<vxml version="2.1" xml:lang="es-ES">
 <form id="entradas" scope="document">
   <field name="opcion">
     <prompt>¿Desea comprar entradas para la visita o consultar los horarios?</prompt>
@@ -6,20 +6,15 @@
   <filled mode="all" namelist="opcion">
     <if cond="opcion = 'comprar entradas' or 'entradas'">
       <goto nextitem="comprar"/>
-    <elseif cond="opcion == 'consultar horarios' or opcion == 'horarios'">
+    <elseif cond="opcion == 'consultar horarios' or opcion == 'horarios'"/>
       <goto nexitem="horarios"/>
     </if>
   </filled>
 </form>
 <form id="comprar">
   <field name="dia">
-  <grammar>lunes|martes|miercoles|jueves|viernes|sabado|domingo</gramar>
+  <grammar>lunes|martes|miercoles|jueves|viernes|sabado|domingo</grammar>
   <prompt> ¿Para que día de la semana desea su entrada? </prompt>
   </field>
-  <field name="hora">
-  <gramar>1|2|3|4|5|6|7|8|8|10|11|12</gramar>
-  <prompt> ¿Para que hora quiere su entrada? </prompt>
-  <field>
-  <filled>
 </form>
 </vxml>

@@ -1,19 +1,19 @@
-<vxml version="2.1" xml:lang="es-ES" application="asistente.vxml">
-<form id="informacion" scope="document">
+<vxml version="2.1" xml:lang="es-ES" >
+<form id="informacion">
   <field name="opcion">
   <prompt> Los palacios Nazarí consta de 3 palacios: el Mexuar, el palacio de Comares y el palacio de los leones. ¿De cual desea obtener información?</prompt>
   </field>
   <filled>
     <if cond="opcion == 'Mexuar'">
-      <goto nextitem="mexuar">
-    <elseif cond="opcion == 'Comares' or opcion == 'palacio de Comares'">
-      <goto nextitem="comares">
-    <elseif cond="opcion == 'leones' or opcion == 'palacio de los leones'">
-      <got nexitem="leones">
+      <goto nextitem="mexuar"/>
+    <elseif cond="opcion == 'Comares' ∨ opcion == 'palacio de Comares'"/>
+      <goto nextitem="comares"/>
+    <elseif cond="opcion == 'leones' ∨ opcion == 'palacio de los leones'"/>
+      <got nexitem="leones"/>
     </if>
   </filled>
 </form>
-<link event="exit"> <gramar>adios|vale|ya|fin|terminar|finalizar|si</grammar> </link>
+<link event="exit"> <grammar>adios|vale|ya|fin|terminar|finalizar|si</grammar> </link>
 <form id="mexuar">
   <catch event="exit">
     <goto nexitem="confirmar_salida"/>

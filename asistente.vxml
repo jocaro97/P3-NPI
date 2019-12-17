@@ -1,5 +1,4 @@
 <vxml version="2.1" xml:lang="es-ES">
-<form id="inicio" scope="document">
   <menu>
     <prompt>Bienvenido al asistente de los palacios Nazari digame en que lo puedo ayudar: </prompt>
     <enumerate/>
@@ -7,5 +6,4 @@
       <choice next="entradas.vxml"> Entradas </choice>
     <enumerate/>
   </menu>
-</form>
 </vxml>
