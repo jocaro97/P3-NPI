@@ -65,12 +65,14 @@
           <exit/>
           <else/>
           De acuerdo, continuemos por donde nos quedamos.
-          <clear <a name=""></a>list="confirmar_salida"/>
+          <clear>
+            <a name=""></a>list="confirmar_salida"/>
+          </clear>
         </if>
       </filled>
     </field>
   </form>
-
+ 
   <form id="comares">
     <link event="historia">
       <grammar>
