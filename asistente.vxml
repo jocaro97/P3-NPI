@@ -1,9 +1,9 @@
 <vxml version="2.1" xml:lang="es-ES">
   <menu>
-    <prompt>Bienvenido al asistente de los palacios Nazari digame en que lo puedo ayudar: </prompt>
+    <prompt> Bienvenido al asistente de los palacios Nazari digame en que lo puedo ayudar: </prompt>
     <enumerate/>
-      <choice next="informacion.vxml"> Informacion </choice>
-      <choice next="entradas.vxml"> Entradas </choice>
+    <choice next="informacion.vxml"> Informacion </choice>
+    <choice next="entradas.vxml"> Entradas </choice>
     <enumerate/>
   </menu>
 </vxml>
