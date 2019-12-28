@@ -1,11 +1,10 @@
 <vxml version="2.1" xml:lang="es-ES" >
-  <menu>
+  <menu accept = aproximate >
     <prompt> Los palacios Nazarí consta de 3 palacios: el Mexuar, el palacio de Comares y el palacio de los leones. ¿De cual desea obtener información?</prompt>
-    <enumerate/>
+    <prompt> ¿Mexuar, palacio de los leones o palacio de Comares?</prompt>
       <choice next="#mexuar"> Mexuar </choice>
       <choice next="#leones"> Palacio de los leones </choice>
       <choice next="#comares"> Palacio de Comares </choice>
-    <enumerate/>
   </menu>
   <form id="mexuar">
     <field name="confirmar_salida" type="boolean">
@@ -15,11 +14,11 @@
         Al fondo, una pequeña habitación desde donde se divisa el Albaycín.
         Parte superior con un friso escrito. Es un oratorio. A continuación se entra en un patio con fuente en el centro y una cámara a la izquierda.
 
-        ¿Quieres conocer más sobre <emp> Mexuar </emp> ? </prompt>
+        ¿Quieres volver a escuchar esta información sobre <emp> Mexuar </emp> ? </prompt>
     </field>
     <filled>
       <if cond="confirmar_salida">
-        De acuerdo, continuemos por donde nos quedamos.
+        De acuerdo, repitamos.
         <clear namelist="confirmar_salida"/>
         <else/>
           De acuerdo.
@@ -34,12 +33,12 @@
       en el que se deja atrás el periodo anterior de decoraciones más abstractas y geométricas para dar paso a un estilo más naturalista,
       sin duda influjo de lo cristiano, acrecentado por la amistad que mantuvieron Mohamed V y Pedro I, el Cruel, por aquel entonces monarca cristiano.
 
-      ¿Quieres conocer más sobre <emp> El palacio de los leones </emp> ?
+      ¿Quieres volver a escuchar esta información sobre <emp> El palacio de los leones </emp> ?
       </prompt>
     </field>
     <filled>
       <if cond="confirmar_salida">
-        De acuerdo, continuemos por donde nos quedamos.
+        De acuerdo, repitamos.
         <clear namelist="confirmar_salida"/>
         <else/>
           De acuerdo.
@@ -54,12 +53,12 @@
       en el que se deja atrás el periodo anterior de decoraciones más abstractas y geométricas para dar paso a un estilo más naturalista, sin duda influjo de lo cristiano,
       acrecentado por la amistad que mantuvieron Mohamed V y Pedro I, el Cruel, por aquel entonces monarca cristiano.
 
-      ¿Quieres conocer más sobre <emp> El palacio de comares </emp> ?
+      ¿Quieres volver a escuchar esta información sobre <emp> El palacio de comares </emp> ?
       </prompt>
     </field>
     <filled>
       <if cond="confirmar_salida">
-        De acuerdo, continuemos por donde nos quedamos.
+        De acuerdo, repitamos.
         <clear namelist="confirmar_salida"/>
         <else/>
           De acuerdo.
