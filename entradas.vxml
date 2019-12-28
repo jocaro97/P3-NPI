@@ -10,9 +10,17 @@
   </menu>
 
   <form id = "comprar">
-    <block>
-      Form comprar
-    </block>
+    <field name = "dia">
+      <prompt>
+        Para que dia de la semana le gustaria comprar entradas?
+      </prompt>
+      <grammar src = "grammars/dias.jsgf"/>
+      <filled>
+        <if cond="dia == 'lunes'">
+          Lo siento, no quedan entradas disponibles para el Lunes.
+        </if>
+      </filled>
+    </field>
   </form>
 
   <form id = "horarios">

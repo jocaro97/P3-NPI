@@ -1,8 +1,11 @@
 <vxml version="2.1" xml:lang="es-ES">
   <menu accept="aproximate">
-    <prompt> Bienvenido al asistente de los palacios Nazari, digame en que lo
-    puedo ayudar </prompt>
-    <prompt> ¿Informacion o entradas? </prompt>
+    <prompt>
+      <audio src = "audios/bienvenida.mp3">
+        Bienvenido al asistente de los palacios Nazari, digame en que lo
+        puedo ayudar. ¿Informacion o entradas?
+      </audio>
+    </prompt>
     <choice next="informacion.vxml"> Informacion </choice>
     <choice next="entradas.vxml"> Entradas </choice>
   </menu>
