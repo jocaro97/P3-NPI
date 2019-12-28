@@ -1,25 +1,23 @@
 <vxml version="2.1" xml:lang="es-ES">
 
-  <form id="entradas" scope="document">
+  <menu accept="aproximate">
+    <prompt> ¿Desea comprar entradas para la visita o consultar los
+      horarios? </prompt>
+    <choice next="#comprar"> comprar </choice>
+    <choice next="#horarios"> horario </choice>
+    <choice next="asistente.vxml"> salir </choice>
+    <catch event="nomatch noinput help"> <reprompt /> </catch>
+  </menu>
 
-    <field name="opcion">
-      <prompt>¿Desea comprar entradas para la visita o consultar los horarios?</prompt>
-    </field>
-
-    <filled mode="all" namelist="opcion">
-      <if cond="opcion = 'comprar entradas' or 'entradas'">
-        <goto nextitem="comprar"/>
-      <elseif cond="opcion == 'consultar horarios' or opcion == 'horarios'"/>
-        <goto nexitem="horarios"/>
-      </if>
-    </filled>
+  <form id = "comprar">
+    <block>
+      Form comprar
+    </block>
   </form>
 
-  <form id="comprar">
-    <field name="dia">
-      <grammar>lunes|martes|miercoles|jueves|viernes|sabado|domingo</grammar>
-      <prompt> ¿Para que día de la semana desea su entrada? </prompt>
-    </field>
+  <form id = "horarios">
+    <block>
+      Form comprar
+    </block>
   </form>
-
 </vxml>
