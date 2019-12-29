@@ -24,7 +24,6 @@
             <assign name="dia_y_turno" expr="true"/>
             <reprompt/>
          </nomatch>
-        <filled> De acuerdo, ha realizado la reserva </filled>
     </initial>
     <field name="dia">
       <grammar src = "grammars/dias.jsgf"/>
@@ -33,13 +32,15 @@
     <field name="turno">
       <grammar src = "grammars/turnos.jsgf"/>
       <prompt>En que turno?</prompt>
-      <filled>
+    </field>
+
+    <filled namelist="dia turno">
         <!-- la idea aqui es mirar en submits/reservas.cgi, que tendra horas
              disponibles para cada dia y mirar si quedan disponibles. -->
         <!--<submit next = "submits/reservas.cgi" namelist = "dia turno"/>-->
-        De acuerdo
-      </filled>
-    </field>
+        De acuerdo, ha realizado la reserva
+    </filled>
+
   </form>
 
   <form id = "horarios">
