@@ -24,7 +24,6 @@
             <assign name="dia_y_turno" expr="true"/>
             <reprompt/>
          </nomatch>
-         <help> Diga por ejemplo "El lunes en el turno dos" </help>
         <filled> De acuerdo, ha realizado la reserva </filled>
     </initial>
     <field name="dia">
