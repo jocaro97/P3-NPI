@@ -1,0 +1,9 @@
+#JSGF V1.0;
+grammar dia_y_turno;
+public <dia_y_turno> =
+
+    [ [el] <dia> {this.dia=$dias} ]
+    [ [en el] turno <turno> {this.turno=$turnos} ];
+
+<dias> = lunes | martes | miercoles | jueves | viernes;
+<turnos> = uno | dos | tres | cuatro | cinco ;
