@@ -1,10 +1,4 @@
 <vxml version="2.1" xml:lang="es-ES">
-  <link event="help">
-  <grammar type="application/x-jsgf">
-    ayuda | necesito ayuda
-  </grammar>
-  </link>
-
   <menu accept="aproximate">
     <prompt>
       <audio src = "audios/bienvenida.mp3">
