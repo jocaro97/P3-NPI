@@ -2,4 +2,4 @@
 
 grammar turnos;
 
-public <dias> = uno | dos | tres | cuatro | cinco ;
+public <turnos> = uno | dos | tres | cuatro | cinco ;
