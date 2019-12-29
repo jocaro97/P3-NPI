@@ -19,7 +19,7 @@
 
     <field name="dia">
       <grammar src = "grammars/dias.jsgf"/>
-         <prompt> Que dia le gustaria realizar la visita? </prompt>
+      <prompt> Que dia le gustaria realizar la visita? </prompt>
     </field>
 
     <field name="turno">
@@ -27,28 +27,26 @@
       <prompt>En que turno?</prompt>
     </field>
 
-    <filled namelist="dia turno">
+    <filled namelist="dia turno" />
 
-      <field name = "dni" type = "digits">
-        <prompt> Por favor, digame su DNI </prompt>
-      </field>
+    <field name = "dni" type = "digits">
+      <prompt> Por favor, digame su DNI </prompt>
+    </field>
 
-      <field name = "confirmacion_dni" type = "boolean" cond = "0.7 >
+    <field name = "confirmacion_dni" type = "boolean" cond = "0.7 >
                                                                 dni$.confidence">
-        <prompt> Has dicho <value expr = "dni"/> </prompt>
-        <prompt> Has dicho <value expr = "dni$.utterance"/> </prompt>
+      <prompt> Has dicho <value expr = "dni"/> </prompt>
+      <prompt> Has dicho <value expr = "dni$.utterance"/> </prompt>
 
-        <filled>
-          <if cond = "!confirmacion_dni">
-            <clear namelist = "dni"/>
-          <else/>
-            De acuerdo
-            <exit/>
-          </if>
-
-        </filled>
-      </field>>
-    </filled>
+      <filled>
+        <if cond = "!confirmacion_dni">
+          <clear namelist = "dni"/>
+        <else/>
+          De acuerdo
+          <exit/>
+        </if>
+      </filled>
+    </field>
 
   </form>
 </vxml>
