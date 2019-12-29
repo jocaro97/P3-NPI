@@ -1,5 +1,5 @@
 <vxml version="2.1" xml:lang="es-ES" >
-  <menu accept = aproximate >
+  <menu accept = "aproximate" >
     <prompt> Los palacios Nazarí consta de 3 palacios: el Mexuar, el palacio de Comares y el palacio de los leones. ¿De cual desea obtener información?</prompt>
     <prompt> ¿Mexuar, palacio de los leones o palacio de Comares?</prompt>
       <choice next="#mexuar"> Mexuar </choice>
