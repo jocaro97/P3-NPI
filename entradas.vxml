@@ -6,7 +6,7 @@
     <choice next="#comprar"> comprar </choice>
     <choice next="#horarios"> horario </choice>
     <choice next="asistente.vxml"> salir </choice>
-    <catch event="nomatch noinput help"> <reprompt /> </catch>
+    <catch event="nomatch noinput help" count ="3"> <reprompt /> </catch>
   </menu>
 
   <form id = "comprar">
@@ -16,9 +16,10 @@
       </prompt>
       <grammar src = "grammars/dias.jsgf"/>
       <filled>
-        <if cond="dia == 'lunes'">
-          Lo siento, no quedan entradas disponibles para el Lunes.
-        </if>
+        <!-- la idea aqui es mirar en submits/reservas.cgi, que tendra horas
+             disponibles para cada dia y mirar si quedan disponibles. -->
+        <submit next = "submits/reservas.cgi" namelist = "dia"/>
+        De acuerdo
       </filled>
     </field>
   </form>
