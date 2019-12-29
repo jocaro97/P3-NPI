@@ -10,7 +10,7 @@
   </menu>
 
   <form id = "comprar">
-    <!--Añadir gramática dia y turno -->
+    <grammar src = "grammars/dia_y_turno.jsgf"/>
     <initial name="dia_y_turno">
          <prompt>
            Que dia y en que turno le gustaria realizar la visita?
