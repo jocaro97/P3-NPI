@@ -1,0 +1,54 @@
+<vxml version="2.1" xml:lang="es-ES">
+
+  <form id = "comprar">
+    <grammar src = "grammars/dia_y_turno.jsgf"/>
+    <initial name="dia_y_turno">
+         <prompt>
+           Que dia y en que turno le gustaria realizar la visita?
+         </prompt>
+         <nomatch count="1">
+            Lo siento no le he entendido. Diga por ejemplo "El lunes en el turno dos"
+         </nomatch>
+         <nomatch count="2">
+            Lo siento, sigo sin entenderle.
+            Le solicitaré la información por separado.
+            <assign name="dia_y_turno" expr="true"/>
+            <reprompt/>
+         </nomatch>
+    </initial>
+
+    <field name="dia">
+      <grammar src = "grammars/dias.jsgf"/>
+         <prompt> Que dia le gustaria realizar la visita? </prompt>
+    </field>
+
+    <field name="turno">
+      <grammar src = "grammars/turnos.jsgf"/>
+      <prompt>En que turno?</prompt>
+    </field>
+
+    <filled namelist="dia turno">
+
+      <field name = "dni" type = "digits">
+        <prompt> Por favor, digame su DNI </prompt>
+      </field>
+
+      <field name = "confirmacion_dni" type = "boolean" cond = "0.7 >
+                                                                dni$.confidence">
+        <prompt> Has dicho <value expr = "dni"/> </prompt>
+        <prompt> Has dicho <value expr = "dni$.utterance"/> </prompt>
+
+        <filled>
+          <if cond = "!confirmacion_dni">
+            <clear namelist = "dni"/>
+          <else/>
+            De acuerdo
+            <exit/>
+          </if>
+
+        </filled>
+      </field>>
+    </filled>
+
+  </form>
+</vxml>
