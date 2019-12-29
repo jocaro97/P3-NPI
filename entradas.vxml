@@ -10,15 +10,33 @@
   </menu>
 
   <form id = "comprar">
-    <field name = "dia">
-      <prompt>
-        Para que dia de la semana le gustaria comprar entradas?
-      </prompt>
+    <!--Añadir gramática dia y turno -->
+    <initial name="dia_y_turno">
+         <prompt>
+           Que dia y en que turno le gustaria realizar la visita?
+         </prompt>
+         <nomatch count="1">
+            Lo siento no le he entendido. Diga por ejemplo "El lunes en el turno dos"
+         </nomatch>
+         <nomatch count="2">
+            Lo siento, sigo sin entenderle.
+            Le solicitaré la información por separado.
+            <assign name="dia_y_turno" expr="true"/>
+            <reprompt/>
+         </nomatch>
+         <help> Diga por ejemplo "El lunes en el turno dos" </help>
+    </initial>
+    <field name="dia">
       <grammar src = "grammars/dias.jsgf"/>
+         <prompt>Que dia le gustaria realizar la visita?</prompt>
+    </field>
+    <field name="turno">
+      <grammar src = "grammars/turnos.jsgf"/>
+      <prompt>En que turno?</prompt>
       <filled>
         <!-- la idea aqui es mirar en submits/reservas.cgi, que tendra horas
              disponibles para cada dia y mirar si quedan disponibles. -->
-        <submit next = "submits/reservas.cgi" namelist = "dia"/>
+        <submit next = "submits/reservas.cgi" namelist = "dia turno"/>
         De acuerdo
       </filled>
     </field>
