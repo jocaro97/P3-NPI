@@ -33,8 +33,7 @@
         <prompt> Por favor, digame su DNI </prompt>
       </field>
 
-      <field name = "confirmacion_dni" type = "boolean" cond = "0.7 >
-                                                                dni$.confidence">
+      <field name = "confirmacion_dni" type = "boolean" cond = "0.7 > dni$.confidence">
         <prompt> Has dicho <value expr = "dni"/> </prompt>
         <prompt> Has dicho <value expr = "dni$.utterance"/> </prompt>
 
