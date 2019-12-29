@@ -44,8 +44,21 @@
   </form>
 
   <form id = "horarios">
-    <block>
-      Form comprar
-    </block>
+    <field name="cuando">
+      <prompt>Desea conocer los turnos de mañana o de tarde?</prompt>
+      <option>Mañana</option>
+      <option>Tarde</option>
+
+      <filled>
+        <if cond="cuando == 'Mañana'">
+            Turno uno: de diez a once
+            Turno dos: de once a doce
+            Turno tres: de doce a una
+        <else/>
+            Turno cuatro: de cinco a seis
+            Turno cinco: de seis a seis
+        </if>
+      </filled>
+    </field>
   </form>
 </vxml>
