@@ -37,7 +37,7 @@
       <filled>
         <!-- la idea aqui es mirar en submits/reservas.cgi, que tendra horas
              disponibles para cada dia y mirar si quedan disponibles. -->
-        <submit next = "submits/reservas.cgi" namelist = "dia turno"/>
+        <!--<submit next = "submits/reservas.cgi" namelist = "dia turno"/>-->
         De acuerdo
       </filled>
     </field>
