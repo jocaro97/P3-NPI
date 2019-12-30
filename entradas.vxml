@@ -1,8 +1,7 @@
 <vxml version="2.1" xml:lang="es-ES">
 
   <menu accept="aproximate">
-    <prompt> ¿Desea comprar entradas para la visita o consultar los
-      horarios? </prompt>
+    <prompt> "Quiere comprar entradas directamente o desea informacion acerca de los turnos y horarios" </prompt>
     <choice next="comprar_entradas.vxml"> comprar </choice>
     <choice next="#horarios"> horario </choice>
     <choice next="asistente.vxml"> salir </choice>
