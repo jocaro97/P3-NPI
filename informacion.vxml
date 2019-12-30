@@ -6,9 +6,10 @@
     <prompt> Los palacios Nazarí consta de 3 palacios: el Mexuar, el palacio de Comares y el palacio de los leones. ¿De cual desea obtener información?</prompt>
     <prompt> Recuerde que si en algún momento desea salir debe decir <emp> Salir </emp> </prompt>
       <choice next="#mexuar"> Mexuar </choice>
-      <choice next="#leones"> Palacio de los leones </choice>
-      <choice next="#comares"> Palacio de Comares </choice>
+      <choice next="#leones"> Leones </choice>
+      <choice next="#comares"> Comares </choice>
       <choice next="#salir"> Salir </choice>
+      <catch event="nomatch noinput" count ="3"> <reprompt /> </catch>
   </menu>
   <form id="mexuar">
     <catch event="exit">
