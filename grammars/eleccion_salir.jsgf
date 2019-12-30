@@ -1,0 +1,5 @@
+#JSGF V1.0;
+grammar eleccion_salir;
+public <eleccion_salir> =
+    [volver al] menu {this.menu_o_salida=menu}
+    | cerrar {this.menu_o_salida=salida};
