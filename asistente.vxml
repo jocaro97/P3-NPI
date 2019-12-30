@@ -1,6 +1,6 @@
 <vxml version="2.1" xml:lang="es-ES">
   <menu accept="aproximate">
-    <prompt>
+    <prompt bargein="false">
       <audio src = "audios/bienvenida.mp3">
         Bienvenido al asistente de los palacios Nazari, digame en que lo
         puedo ayudar. ¿Informacion o entradas?
