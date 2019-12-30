@@ -2,7 +2,7 @@
   <menu accept="aproximate" id="menu_principal">
     <prompt bargein="false">
       <audio src = "audios/bienvenida.mp3">
-        Bienvenido al asistente de los palacios Nazari, digame en que lo
+        Bienvenido al asistente de los palacios Nazaries, digame en que le
         puedo ayudar. ¿Informacion o entradas?
       </audio>
     </prompt>
