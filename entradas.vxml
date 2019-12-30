@@ -31,7 +31,7 @@
       </filled>
     </field>
     <field name="repetir">
-      <prompt> ¿Desea consultar otro horarios o escuchar los turnos de nuevo? </prompt>
+      <prompt> ¿Desea consultar los horarios de nuevo o pasar a comprar las entradas?</prompt>
       <option>Consultar</option>
       <option>Escuchar</option>
       <option>Salir</option>
@@ -39,16 +39,14 @@
     </field>
     <filled>
       <if cond="repetir == 'Consultar'">
-        <clear namelist="repetir"/>
-        <clear namelist="cuando"/>
+        <clear namelist="repetir cuando"/>
         <goto nextitem="cuando"/>
-      <elseif cond="repetir == 'Escuchar'"/>
-        <clear namelist="repetir"/>
-        <clear namelist="cuando"/>
-        <goto nextitem="cuando"/>
+      <elseif cond="repetir == 'Comprar'"/>
+        De acuerdo.
+        <goto next="comprar_entradas.vxml"/>
       <else/>
         De acuerdo.
-        <goto next="#menu_entradas"/>
+        <goto next="asistente.vxml"/>
       </if>
     </filled>
 
