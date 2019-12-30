@@ -5,6 +5,7 @@
     <prompt> "Quiere comprar entradas directamente o desea informacion acerca de los turnos y horarios" </prompt>
     <choice next="comprar_entradas.vxml"> comprar </choice>
     <choice next="#horarios"> horario </choice>
+    <choice next="#horarios"> turnos </choice>
     <choice next="asistente.vxml"> salir </choice>
     <catch event="nomatch noinput help" count ="3"> <reprompt /> </catch>
     <catch event="ayuda">
