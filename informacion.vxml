@@ -1,6 +1,6 @@
 <vxml version="2.1" xml:lang="es-ES" >
   <link event="exit"> <grammar src="grammars/salir.jsgf"/> </link>
-  <menu accept = "aproximate" >
+  <menu accept = "aproximate" id="main_menu">
     <prompt> Los palacios Nazarí consta de 3 palacios: el Mexuar, el palacio de Comares y el palacio de los leones. ¿De cual desea obtener información?</prompt>
     <prompt> ¿Mexuar, palacio de los leones o palacio de Comares?</prompt>
       <choice next="#mexuar"> Mexuar </choice>
@@ -10,10 +10,8 @@
   </menu>
   <form id="mexuar">
     <catch event="exit">
-			<block>
-				<goto next="#salir"/>
-			</block>
-		</catch>
+	  <goto next="#salir"/>
+	</catch>
     <field name="confirmar_salida">
     <prompt> Es la sala más primitiva. Era la audiencia y justicia para casos importantes.
         Tenía una cámara elevada cerrada por celosías donde se sentaba el sultán a escuchar sin ser visto.
@@ -84,8 +82,7 @@
         <exit/>
       <else/>
         Volvamos al menu.
-        <clear namelist="confirmar_salida"/>
-        <goto next="informacion.vxml"/>
+        <goto next="#main_menu"/>
       </if>
     </filled>
   </form>
