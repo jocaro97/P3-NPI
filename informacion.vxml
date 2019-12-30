@@ -1,5 +1,8 @@
 <vxml version="2.1" xml:lang="es-ES" application="asistente.vxml">
+
   <link event="exit"> <grammar src="grammars/salir.jsgf"/> </link>
+  <link event="ayuda"> <grammar src="grammars/ayuda.jsgf"/> </link>
+
   <menu accept = "aproximate" id="main_menu">
     <prompt> Los palacios Nazarí consta de 3 palacios: el Mexuar, el palacio de Comares y el palacio de los leones. ¿De cual desea obtener información?</prompt>
     <prompt> Recuerde que si en algún momento desea salir debe decir <emp> Salir </emp> </prompt>

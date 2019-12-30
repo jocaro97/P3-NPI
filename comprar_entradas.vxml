@@ -1,4 +1,5 @@
 <vxml version="2.1" xml:lang="es-ES">
+  <link event="ayuda"> <grammar src="grammars/ayuda.jsgf"/> </link>
 
   <form id = "comprar">
     <grammar src = "grammars/dia_y_turno.jsgf"/>

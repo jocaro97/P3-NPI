@@ -1,4 +1,5 @@
 <vxml version="2.1" xml:lang="es-ES">
+  <link event="ayuda"> <grammar src="grammars/ayuda.jsgf"/> </link>
 
   <menu accept="aproximate" id="menu_entradas">
     <prompt> "Quiere comprar entradas directamente o desea informacion acerca de los turnos y horarios" </prompt>

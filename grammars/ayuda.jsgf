@@ -1,4 +1,4 @@
 #JSGF V1.0;
 grammar ayuda;
 
-public <ayuda> = ayuda | perdido | no se que hacer;
+public <ayuda> = ayuda | perdido | no se que hacer | help;
