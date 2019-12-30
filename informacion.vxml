@@ -1,18 +1,25 @@
 <vxml version="2.1" xml:lang="es-ES" >
   <link event="exit"> <grammar src="grammars/salir.jsgf"/> </link>
-  <menu accept = "aproximate" id="main_menu">
-    <prompt> Los palacios Nazarí consta de 3 palacios: el Mexuar, el palacio de Comares y el palacio de los leones. ¿De cual desea obtener información?</prompt>
-    <prompt> ¿Mexuar, palacio de los leones o palacio de Comares?</prompt>
-      <choice next="#mexuar"> Mexuar </choice>
-      <choice next="#leones"> Palacio de los leones </choice>
-      <choice next="#comares"> Palacio de Comares </choice>
-      <choice next="#salir"> Salir </choice>
+  <menu accept = "aproximate" id="menu_informacion">
+    <prompt>
+      Los palacios Nazarí consta de 3 palacios: el Mexuar, el palacio de
+      Comares y el palacio de los leones. ¿De cual desea obtener información?.
+      Recuerde que si en algún momento quiere que me detenga solo tiene
+      que decirlo.
+      Si desea información sobre las entradas, también puede decirmelo.
+    </prompt>
+    <choice next="#mexuar"> Mexuar </choice>
+    <choice next="#leones"> Palacio de los leones </choice>
+    <choice next="#comares"> Palacio de Comares </choice>
+    <choice next="#salir"> Salir </choice>
+    <choice next="entradas.vxml"> Entradas </choice>
+    <choice next="entradas.vxml"> Horarios </choice>
   </menu>
   <form id="mexuar">
     <catch event="exit">
-	  <goto next="#salir"/>
-	</catch>
-    <field name="confirmar_salida">
+	     <goto next="#salir"/>
+	  </catch>
+    <field name="confirmar_salida" type="boolean">
     <prompt> Es la sala más primitiva. Era la audiencia y justicia para casos importantes.
         Tenía una cámara elevada cerrada por celosías donde se sentaba el sultán a escuchar sin ser visto.
         No existían las ventanas laterales. Tenía el techo abierto en su parte central.
@@ -22,16 +29,19 @@
         ¿Quieres volver a escuchar esta información sobre <emp> Mexuar </emp> ? </prompt>
     </field>
     <filled>
-      <if cond="confirmar_salida == 'Si'">
+      <if cond="confirmar_salida">
         De acuerdo, repitamos.
         <clear namelist="confirmar_salida"/>
         <else/>
-          De acuerdo.
-          <exit/>
+          De acuerdo. Volvamos al menu.
+          <goto next="#menu_informacion"/>
       </if>
     </filled>
   </form>
   <form id="leones">
+    <catch event="exit">
+	     <goto next="#salir"/>
+	  </catch>
     <field name="confirmar_salida" type="boolean">
       <prompt> En este palacio el arte nazarí alcanza su máximo esplendor, en el que se alcanza una belleza de una sensibilidad y armonía incomparables,
       donde la luz, el agua, el colorido, la decoración exquisita, convierte a este palacio en una maravilloso placer para los sentidos,
@@ -46,13 +56,16 @@
         De acuerdo, repitamos.
         <clear namelist="confirmar_salida"/>
         <else/>
-          De acuerdo.
-          <exit/>
+          De acuerdo. Volvamos al menu.
+          <goto next="#menu_informacion"/>
       </if>
     </filled>
 
   </form>
   <form id="comares">
+    <catch event="exit">
+	     <goto next="#salir"/>
+	  </catch>
     <field name="confirmar_salida" type="boolean">
       <prompt> En este palacio el arte nazarí alcanza su máximo esplendor, en el que se alcanza una belleza de una sensibilidad y armonía incomparables,
       donde la luz, el agua, el colorido, la decoración exquisita, convierte a este palacio en una maravilloso placer para los sentidos,
@@ -82,7 +95,7 @@
         <exit/>
       <else/>
         Volvamos al menu.
-        <goto next="#main_menu"/>
+        <goto next="#menu_informacion"/>
       </if>
     </filled>
   </form>
