@@ -17,7 +17,7 @@
             <reprompt/>
          </nomatch>
          <help>
-         <prompt> Hola </prompt>
+         <prompt> De acuerdo </prompt>
          </help>
     </initial>
 
@@ -53,6 +53,9 @@
         </if>
       </filled>
     </field>
-
+    <catch event="ayuda">
+      De acuerdo, te repetiré lo que acabo de decirte.
+	    <goto next="#comprar"/>
+	  </catch>
   </form>
 </vxml>

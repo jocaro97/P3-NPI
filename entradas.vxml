@@ -7,6 +7,10 @@
     <choice next="#horarios"> horario </choice>
     <choice next="asistente.vxml"> salir </choice>
     <catch event="nomatch noinput help" count ="3"> <reprompt /> </catch>
+    <catch event="ayuda">
+      De acuerdo, te repetiré lo que acabo de decirte.
+	    <goto next="#menu_entradas"/>
+	  </catch>
   </menu>
 
   <form id = "horarios">
@@ -47,5 +51,11 @@
         <goto next="#menu_entradas"/>
       </if>
     </filled>
+
+    <catch event="ayuda">
+       De acuerdo, te repetiré lo que acabo de decirte.
+	     <reprompt/>
+	  </catch>
+
   </form>
 </vxml>

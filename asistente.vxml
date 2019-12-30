@@ -4,14 +4,19 @@
   <menu accept="aproximate" id="menu_principal">
     <prompt bargein="false">
       <audio src = "audios/bienvenida.mp3">
-        Bienvenido al asistente de los palacios Nazaries, digame en que le
-        puedo ayudar. ¿Informacion o entradas?
+        Bienvenido al servicio automático de gestión los palacios Nazaríes. Desea obtener información sobre estos, o gestionar una visita?
       </audio>
     </prompt>
     <choice next="informacion.vxml"> Informacion </choice>
-    <choice next="entradas.vxml"> Entradas </choice>
+    <choice next="entradas.vxml"> Visita </choice>
     <choice next="#salir"> Salir </choice>
+
+    <catch event="ayuda">
+      De acuerdo, te repetiré lo que acabo de decirte.
+	    <goto next="#menu_principal"/>
+	  </catch>
   </menu>
+
   <form id="salir">
     <field name="confirmar_salida" type="boolean">
       <prompt> ¿Seguro que desea salir? </prompt>
@@ -26,4 +31,5 @@
       </if>
     </filled>
   </form>
+
 </vxml>
