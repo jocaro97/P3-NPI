@@ -45,7 +45,7 @@
         De acuerdo.
         <goto next="comprar_entradas.vxml"/>
       <else/>
-        De acuerdo.
+        Vale, volvemos al menú principal.
         <goto next="asistente.vxml"/>
       </if>
     </filled>
