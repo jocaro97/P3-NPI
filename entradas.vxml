@@ -1,6 +1,6 @@
 <vxml version="2.1" xml:lang="es-ES">
-
-  <menu accept="aproximate">
+  
+  <menu accept="aproximate" id="menu_entradas">
     <prompt> "Quiere comprar entradas directamente o desea informacion acerca de los turnos y horarios" </prompt>
     <choice next="comprar_entradas.vxml"> comprar </choice>
     <choice next="#horarios"> horario </choice>
@@ -21,9 +21,30 @@
             Turno tres: de doce a una
         <else/>
             Turno cuatro: de cinco a seis
-            Turno cinco: de seis a seis
+            Turno cinco: de seis a siete
         </if>
       </filled>
     </field>
+    <field name="repetir">
+      <prompt> ¿Desea consultar otro horarios o escuchar los turnos de nuevo? </prompt>
+      <option>Consultar</option>
+      <option>Escuchar</option>
+      <option>Salir</option>
+      <option>No</option>
+    </field>
+    <filled>
+      <if cond="repetir == 'Consultar'">
+        <clear namelist="repetir"/>
+        <clear namelist="cuando"/>
+        <goto nextitem="cuando"/>
+      <elseif cond="repetir == 'Escuchar'"/>
+        <clear namelist="repetir"/>
+        <clear namelist="cuando"/>
+        <goto nextitem="cuando"/>
+      <else/>
+        De acuerdo.
+        <exit/>
+      </if>
+    </filled>
   </form>
 </vxml>
