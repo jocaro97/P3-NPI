@@ -10,6 +10,7 @@
     <choice next="informacion.vxml"> Informacion </choice>
     <choice next="entradas.vxml"> Visita </choice>
     <choice next="#salir"> Salir </choice>
+    <catch event="nomatch noinput" count ="3"> <reprompt /> </catch>
 
     <catch event="ayuda">
       De acuerdo, te repetiré lo que acabo de decirte.
