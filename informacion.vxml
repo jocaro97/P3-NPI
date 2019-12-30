@@ -1,13 +1,20 @@
 <vxml version="2.1" xml:lang="es-ES" >
+  <link event="exit"> <grammar src="grammars/salir.jsgf"/> </link>
   <menu accept = "aproximate" >
     <prompt> Los palacios Nazarí consta de 3 palacios: el Mexuar, el palacio de Comares y el palacio de los leones. ¿De cual desea obtener información?</prompt>
     <prompt> ¿Mexuar, palacio de los leones o palacio de Comares?</prompt>
       <choice next="#mexuar"> Mexuar </choice>
       <choice next="#leones"> Palacio de los leones </choice>
       <choice next="#comares"> Palacio de Comares </choice>
+      <choice next="#salir"> Salir </choice>
   </menu>
   <form id="mexuar">
-    <field name="confirmar_salida" type="boolean">
+    <catch event="exit">
+			<block>
+				<goto next="#salir"/>
+			</block>
+		</catch>
+    <field name="confirmar_salida">
     <prompt> Es la sala más primitiva. Era la audiencia y justicia para casos importantes.
         Tenía una cámara elevada cerrada por celosías donde se sentaba el sultán a escuchar sin ser visto.
         No existían las ventanas laterales. Tenía el techo abierto en su parte central.
@@ -17,7 +24,7 @@
         ¿Quieres volver a escuchar esta información sobre <emp> Mexuar </emp> ? </prompt>
     </field>
     <filled>
-      <if cond="confirmar_salida">
+      <if cond="confirmar_salida == 'Si'">
         De acuerdo, repitamos.
         <clear namelist="confirmar_salida"/>
         <else/>
@@ -45,6 +52,7 @@
           <exit/>
       </if>
     </filled>
+
   </form>
   <form id="comares">
     <field name="confirmar_salida" type="boolean">
@@ -63,6 +71,21 @@
         <else/>
           De acuerdo.
           <exit/>
+      </if>
+    </filled>
+  </form>
+  <form id="salir">
+    <field name="confirmar_salida" type="boolean">
+      <prompt> ¿Seguro que no quiere conocer más acerca de estos palacios? </prompt>
+    </field>
+    <filled>
+      <if cond="confirmar_salida">
+        De acuerdo.
+        <exit/>
+      <else/>
+        Volvamos al menu.
+        <clear namelist="confirmar_salida"/>
+        <goto next="informacion.vxml"/>
       </if>
     </filled>
   </form>
