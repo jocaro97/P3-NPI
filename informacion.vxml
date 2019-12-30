@@ -1,12 +1,18 @@
 <vxml version="2.1" xml:lang="es-ES" >
   <link event="exit"> <grammar src="grammars/salir.jsgf"/> </link>
-  <menu accept = "aproximate" id="main_menu">
-    <prompt> Los palacios Nazarí consta de 3 palacios: el Mexuar, el palacio de Comares y el palacio de los leones. ¿De cual desea obtener información?</prompt>
-    <prompt> Recuerde que si en algún momento quiere salir debe decir <emp> Salir </emp> </prompt>
-      <choice next="#mexuar"> Mexuar </choice>
-      <choice next="#leones"> Palacio de los leones </choice>
-      <choice next="#comares"> Palacio de Comares </choice>
-      <choice next="#salir"> Salir </choice>
+  <menu accept = "aproximate" id="menu_informacion">
+    <prompt>
+      Los palacios Nazarí consta de 3 palacios: el Mexuar, el palacio de
+      Comares y el palacio de los leones. ¿De cual desea obtener información?.
+      Recuerde que si en algún momento quiere que me detenga solo tiene
+      que decirlo.
+      Si desea información sobre las entradas, también puede decirmelo.
+    </prompt>
+    <choice next="#mexuar"> Mexuar </choice>
+    <choice next="#leones"> Palacio de los leones </choice>
+    <choice next="#comares"> Palacio de Comares </choice>
+    <choice next="#salir"> Salir </choice>
+    <choice next="entradas.vxml"> Entradas </choice>
   </menu>
   <form id="mexuar">
     <catch event="exit">
@@ -27,7 +33,7 @@
         <clear namelist="confirmar_salida"/>
         <else/>
           De acuerdo. Volvamos al menu.
-          <goto next="#main_menu"/>
+          <goto next="#menu_informacion"/>
       </if>
     </filled>
   </form>
@@ -50,7 +56,7 @@
         <clear namelist="confirmar_salida"/>
         <else/>
           De acuerdo. Volvamos al menu.
-          <goto next="#main_menu"/>
+          <goto next="#menu_informacion"/>
       </if>
     </filled>
 
@@ -88,7 +94,7 @@
         <exit/>
       <else/>
         Volvamos al menu.
-        <goto next="#main_menu"/>
+        <goto next="#menu_informacion"/>
       </if>
     </filled>
   </form>
