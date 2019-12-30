@@ -90,9 +90,11 @@
       <if cond="menu_o_salida =='salida'">
         De acuerdo.
         <exit/>
-      <else/>
+      <elseif cond="menu_o_salida =='menu'"/>
         Volvamos al menú.
         <goto next="asistente.vxml"/>
+      <else/>
+        <value expr="menu_o_salida"/>
       </if>
     </filled>
   </form>
