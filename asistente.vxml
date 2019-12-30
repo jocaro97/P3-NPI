@@ -1,5 +1,5 @@
 <vxml version="2.1" xml:lang="es-ES">
-  <menu accept="aproximate">
+  <menu accept="aproximate" id="menu_principal">
     <prompt bargein="false">
       <audio src = "audios/bienvenida.mp3">
         Bienvenido al asistente de los palacios Nazari, digame en que lo
@@ -8,5 +8,20 @@
     </prompt>
     <choice next="informacion.vxml"> Informacion </choice>
     <choice next="entradas.vxml"> Entradas </choice>
+    <choice next="#salir"> Salir </choice>
   </menu>
+  <form id="salir">
+    <field name="confirmar_salida" type="boolean">
+      <prompt> ¿Seguro que desea salir? </prompt>
+    </field>
+    <filled>
+      <if cond="confirmar_salida">
+        Hasta luego.
+        <exit/>
+      <else/>
+        De acuerdo.
+        <goto next="#menu_principal"/>
+      </if>
+    </filled>
+  </form>
 </vxml>

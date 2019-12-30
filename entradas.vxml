@@ -1,5 +1,5 @@
 <vxml version="2.1" xml:lang="es-ES">
-  
+
   <menu accept="aproximate" id="menu_entradas">
     <prompt> "Quiere comprar entradas directamente o desea informacion acerca de los turnos y horarios" </prompt>
     <choice next="comprar_entradas.vxml"> comprar </choice>
@@ -43,7 +43,7 @@
         <goto nextitem="cuando"/>
       <else/>
         De acuerdo.
-        <exit/>
+        <goto next="#menu_entradas"/>
       </if>
     </filled>
   </form>
