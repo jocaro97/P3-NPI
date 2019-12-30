@@ -13,6 +13,7 @@
     <choice next="#comares"> Palacio de Comares </choice>
     <choice next="#salir"> Salir </choice>
     <choice next="entradas.vxml"> Entradas </choice>
+    <choice next="entradas.vxml"> Horarios </choice>
   </menu>
   <form id="mexuar">
     <catch event="exit">
