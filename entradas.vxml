@@ -33,7 +33,7 @@
     <field name="repetir">
       <prompt> ¿Desea consultar los horarios de nuevo o pasar a comprar las entradas?</prompt>
       <option>Consultar</option>
-      <option>Escuchar</option>
+      <option>Comprar</option>
       <option>Salir</option>
       <option>No</option>
     </field>
